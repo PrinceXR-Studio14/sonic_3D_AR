@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sonic_3D_AR</title>
+
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+    <!-- MindAR -->
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      mindar-image="imageTargetSrc: targets.mind;"
+      renderer="colorManagement: true; physicallyCorrectLights: true"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: true">
+
+    <a-assets>
+        <a-asset-item id="model" src="textured.glb"></a-asset-item>
+    </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+
+
+        
+    <a-gltf-model
+        src="#model"
+        position="0 0 0"
+        scale="1 1 1"
+        rotation="90 0 0">
+    </a-gltf-model>
+        </a-gltf-model>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
